@@ -1,0 +1,116 @@
+<div ng-controller="formCtrl">
+    <div>
+        <p>
+            创建项目，用于存储无关联数据
+        <p/>
+    </div>
+    <form role="form" class="form-horizontal" ng-submit="submit()">
+        <div class="form-group">
+            <label for="projectName" class="col-sm-1 control-label">项目</label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control" ng-trim="true" ng-model="formData.projectName"
+                       placeholder="项目名称" id="projectName">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="tableName" class="col-sm-1 control-label">表名</label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control" ng-trim="true" ng-model="formData.tableName"
+                       placeholder="表名" id="tableName">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="remark" class="col-sm-1 control-label">项目</label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control" ng-trim="true" ng-model="formData.comment"
+                       placeholder="备注" id="remark">
+            </div>
+        </div>
+        <table>
+            <tr>
+                <th>名字</th>
+                <th>数据类型</th>
+                <th>长度</th>
+                <th>是否唯一</th>
+                <th>默认值</th>
+                <th>备注</th>
+                <th>操作</th>
+            </tr>
+            <tr ng-repeat="row in rowList" class="form-horizontal">
+                <td class="col-sm-2">
+                    <input type="text" class="form-control" placeholder="名字" ng-model="row.chineseName">
+                </td>
+                <td class="col-sm-1">
+                    <input type="text" class="form-control" placeholder="数据类型	" ng-model="row.dateType">
+                </td>
+                <td class="col-sm-1">
+                    <input type="text" class="form-control" placeholder="长度" ng-model="row.length">
+                </td>
+                <td class="col-sm-1">
+                    <input type="text" class="form-control" placeholder="是否唯一	" ng-model="row.unquie">
+                </td>
+                <td class="col-sm-2">
+                    <input type="text" class="form-control" placeholder="默认值" ng-model="row.defaultValue">
+                </td>
+                <td class="col-sm-3">
+                    <input type="text" class="form-control" placeholder="备注" ng-model="row.comment">
+                </td>
+                <td>
+                    <button type="button" class="btn-primary" ng-click="addRow()">增加一行</button>
+                    |
+                    <button type="button" class="btn-primary" ng-click="delete(row)">删除该行</button>
+                </td>
+            </tr>
+        </table>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-2">
+                <button type="submit" class="btn btn-default">登 录</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<hr/>
+
+<!--<div ng-controller="uploadCtrl">-->
+<!--<form role="form" class="form-horizontal" ng-submit="upload()">-->
+<!--<div class="form-group">-->
+<!--<label for="projectName" class="col-sm-1 control-label">项目</label>-->
+<!--<div class="col-sm-5">-->
+<!--<input type="text" class="form-control" ng-trim="true" ng-model="formData.projectName"-->
+<!--placeholder="项目名称" id="uploadProjectName">-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="form-group">-->
+<!--<label for="tableName" class="col-sm-1 control-label">表名</label>-->
+<!--<div class="col-sm-5">-->
+<!--<input type="text" class="form-control" ng-trim="true" ng-model="formData.tableName"-->
+<!--placeholder="表名" id="uploadTableName">-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="form-group">-->
+<!--<label for="remark" class="col-sm-1 control-label">项目</label>-->
+<!--<div class="col-sm-5">-->
+<!--<input type="text" class="form-control" ng-trim="true" ng-model="formData.comment"-->
+<!--placeholder="备注" id="uploadRemark">-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="form-group">-->
+<!--<label for="sql" class="col-sm-1 control-label">sql</label>-->
+<!--<textarea class="form-control col-sm-offset-1" ng-model="formData.comment"-->
+<!--placeholder="执行sql创建表，一次仅支持一张表" id="sql"></textarea>-->
+<!--</div>-->
+<!--<div class="form-group">-->
+<!--<label for="sql" class="col-sm-1 control-label">上传文件</label>-->
+<!--<div class="col-sm-5">-->
+<!--<input type="file" class="form-control ">-->
+<!--<span>使用sql导出为excel然后上传,当前仅支持excel上传</span>-->
+<!--</div>-->
+<!--</div>-->
+<!--</form>-->
+
+<!--<hr>-->
+<!--<pre>-->
+<!--想支持更多创建的方式，-->
+<!--</pre>-->
+<!--</div>-->

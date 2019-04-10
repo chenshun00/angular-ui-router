@@ -1,0 +1,47 @@
+<div ng-controller="uploadCtrl">
+    <form role="form" enctype="multipart/form-data" class="form-horizontal" ng-submit="upload()">
+        <div class="form-group">
+            <label for="uploadProjectName" class="col-sm-1 control-label">项目</label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control" ng-trim="true" ng-model="formData.projectName"
+                       placeholder="项目名称" id="uploadProjectName">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="uploadTableName" class="col-sm-1 control-label">表名</label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control" ng-trim="true" ng-model="formData.tableName"
+                       placeholder="表名" id="uploadTableName">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="uploadRemark" class="col-sm-1 control-label">备注</label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control" ng-trim="true" ng-model="formData.remark"
+                       placeholder="备注" id="uploadRemark">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="sql" class="col-sm-1 control-label">sql</label>
+            <textarea style="margin-left: 145px;width: 620px;height: 200px" class="form-control col-sm-offset-1"
+                      ng-model="formData.sql"
+                      placeholder="执行sql创建表，一次仅支持一张表" id="sql"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="sql" class="col-sm-1 control-label">上传文件</label>
+            <div class="col-sm-5">
+                <input type="file" class="form-control" file-model="fileToUpload">
+                <span>使用sql导出为excel然后上传,当前仅支持excel上传</span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <!--<label for="sql" class="col-sm-1 control-label">-->
+            <button class="form-control col-sm-10 btn-info">提 交</button>
+            <!--</label>-->
+        </div>
+    </form>
+
+
+    <pre>{{formData}}</pre>
+</div>
